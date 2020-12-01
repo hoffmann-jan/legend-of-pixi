@@ -16,6 +16,8 @@ public class TheGameObject : MonoBehaviour
     /// </summary>
     private Collider2D[] _colliders;
 
+    private Animator _anim;
+
     /// <summary>
     /// Move which should be made in this Frame.
     /// </summary>
@@ -23,6 +25,7 @@ public class TheGameObject : MonoBehaviour
 
     private void Awake()
     {
+        _anim = GetComponent<Animator>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _colliders = new Collider2D[10];
     }
@@ -50,6 +53,26 @@ public class TheGameObject : MonoBehaviour
 
     private void LateUpdate()
     {
+        _anim.SetFloat("change_x", change.x);
+        _anim.SetFloat("change_y", change.y);
+
+        if (change.x >= 1f)
+        {
+            _anim.SetFloat("lookAt", 3f);
+        }
+        else if (change.x <= -1f)
+        {
+            _anim.SetFloat("lookAt", 1f);
+        }
+        else if (change.y >= 1f)
+        {
+            _anim.SetFloat("lookAt", 2f);
+        }
+        else if (change.y <= -1f)
+        {
+            _anim.SetFloat("lookAt", 0f);
+        }
+
         float step = RoundToPixelGrid(1f * Time.deltaTime);
         var oldPosition = transform.position;
         transform.position += change * step;
