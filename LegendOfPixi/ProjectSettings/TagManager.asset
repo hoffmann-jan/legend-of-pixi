@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Water
+    uniqueID: 3824440047
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -49,4 +52,7 @@ TagManager:
     locked: 0
   - name: Forergound
     uniqueID: 1568858883
+    locked: 0
+  - name: Blocker
+    uniqueID: 1633999783
     locked: 0
