@@ -56,3 +56,6 @@ TagManager:
   - name: Blocker
     uniqueID: 1633999783
     locked: 0
+  - name: UI
+    uniqueID: 1527285831
+    locked: 0
