@@ -1,13 +1,12 @@
-﻿using UnityEngine;
-
-/// <summary>
+﻿/// <summary>
 /// Collectable gem script.
 /// </summary>
-public class Gem : MonoBehaviour
+public class Gem : Collectible
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override void OnCollect()
     {
-        Debug.Log("Gem collected!");
+        base.OnCollect();
+
         SaveGameDataSingleton.instance.inventory.gems++;
         Destroy(gameObject);
     }

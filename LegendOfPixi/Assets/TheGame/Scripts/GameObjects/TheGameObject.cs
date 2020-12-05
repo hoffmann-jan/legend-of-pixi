@@ -10,24 +10,27 @@ public class TheGameObject : MonoBehaviour
     /// <summary>
     /// <see cref="BoxCollider2D"/> pointer for collision detection.
     /// </summary>
-    private BoxCollider2D _boxCollider;
+    protected BoxCollider2D _boxCollider;
     /// <summary>
     /// Temporary memory for <see cref="IsColliding"/>.
     /// </summary>
-    private Collider2D[] _colliders;
+    protected Collider2D[] _colliders;
 
     private Animator _anim;
+
+    private ContactFilter2D _obstacleFilter2d;
 
     /// <summary>
     /// Move which should be made in this Frame.
     /// </summary>
     public Vector3 change;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _anim = GetComponent<Animator>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _colliders = new Collider2D[10];
+        _obstacleFilter2d = new ContactFilter2D();
     }
 
     /// <summary>
@@ -47,8 +50,7 @@ public class TheGameObject : MonoBehaviour
     /// <returns>True, if colliding; else false.</returns>
     protected bool IsColliding()
     {
-        _boxCollider.OverlapCollider(new ContactFilter2D(), _colliders);
-        return _boxCollider.OverlapCollider(new ContactFilter2D(), _colliders) > 0;
+        return _boxCollider.OverlapCollider(_obstacleFilter2d, _colliders) > 0;
     }
 
     private void LateUpdate()
