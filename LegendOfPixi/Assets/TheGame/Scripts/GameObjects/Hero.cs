@@ -2,6 +2,9 @@
 
 public class Hero : TheGameObject
 {
+    public RuntimeAnimatorController BasicSkin;
+    public RuntimeAnimatorController ShieldSkin;
+
     private ContactFilter2D _triggerContactFilter2D;
 
     protected override void Awake()
@@ -25,6 +28,15 @@ public class Hero : TheGameObject
                     collectible.OnCollect();
                 }
             }
+        }
+
+        if (SaveGameDataSingleton.instance.inventory.shield)
+        {
+            _anim.runtimeAnimatorController = ShieldSkin;
+        }
+        else
+        {
+            _anim.runtimeAnimatorController = BasicSkin;
         }
     }
 }

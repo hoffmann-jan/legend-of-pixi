@@ -15,8 +15,10 @@ public class TheGameObject : MonoBehaviour
     /// Temporary memory for <see cref="IsColliding"/>.
     /// </summary>
     protected Collider2D[] _colliders;
-
-    private Animator _anim;
+    /// <summary>
+    /// Objects animator component.
+    /// </summary>
+    protected Animator _anim;
 
     private ContactFilter2D _obstacleFilter2d;
 
