@@ -39,4 +39,13 @@ public class Hero : TheGameObject
             _anim.runtimeAnimatorController = BasicSkin;
         }
     }
+
+    /// <summary>
+    /// Reaction on action key.
+    /// </summary>
+    public void PerformAction()
+    {
+        Sword sword = GetComponentInChildren<Sword>();
+        sword.Stroke();
+    }
 }

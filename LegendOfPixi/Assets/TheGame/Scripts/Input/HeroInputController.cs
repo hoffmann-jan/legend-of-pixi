@@ -17,17 +17,22 @@ public class HeroInputController : MonoBehaviour
         {
             hero.change.x = 1;
         }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             hero.change.x = -1;
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             hero.change.y = 1;
         }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             hero.change.y = -1;
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            hero.PerformAction();
         }
     }
 }

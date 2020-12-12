@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: 5601323976189978565
     second: Weapons_0
+  - first:
+      213: -3436821693910558372
+    second: Weapons_0
+  - first:
+      213: -761887118410055393
+    second: Weapons_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -128,8 +134,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c7aea0ba76ebbd40800000000000000
-      internalID: 5601323976189978565
+      spriteID: c59da12e0e4fd40d0800000000000000
+      internalID: -3436821693910558372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapons_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f110934d3bb3d65f0800000000000000
+      internalID: -761887118410055393
       vertices: []
       indices: 
       edges: []
