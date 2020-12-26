@@ -52,22 +52,28 @@ public class Sword : MonoBehaviour
     {
         int lookAt = Mathf.RoundToInt(CharacterAnimator.GetFloat("lookAt"));
 
+        float scaleX = 1f;
+        float rotateZ = 0f;
+
         if (lookAt == 0)
         {
-            transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+            rotateZ = 90f;
         }
         else if (lookAt == 1)
         {
-            transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+
         }
         else if (lookAt == 2)
         {
-            transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+            rotateZ  = -90f;
         }
         else if (lookAt == 3)
         {
-            transform.localRotation = Quaternion.Euler(0f, 0f, 180f);
+            scaleX = -1f;
         }
+
+        transform.localRotation = Quaternion.Euler(0f, 0f, rotateZ);
+        transform.localScale = new Vector3(scaleX, 1f, 1f);
 
         SetVisible(true);
         Anim.SetTrigger("OnStroke");

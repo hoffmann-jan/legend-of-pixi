@@ -10264,7 +10264,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 234, y: 132}
+  m_SizeDelta: {x: 272, y: 152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1855346533
 MonoBehaviour:
@@ -10388,6 +10388,16 @@ MonoBehaviour:
   change: {x: 0, y: 0, z: 0}
   BasicSkin: {fileID: 9100000, guid: 14e33f1d6d6aaf24fb767e17d1f0f0b0, type: 2}
   ShieldSkin: {fileID: 22100000, guid: 80d466bf9def041fba5f95d04a6d46b9, type: 2}
+  EmptyActionSkin:
+    Down: {fileID: 2805043176163793281, guid: 06bf9539ad5681943b46c7adfd6c27c2, type: 3}
+    Left: {fileID: 2632276121321243838, guid: 06bf9539ad5681943b46c7adfd6c27c2, type: 3}
+    Up: {fileID: 8960899199633546546, guid: 06bf9539ad5681943b46c7adfd6c27c2, type: 3}
+    Right: {fileID: 2632276121321243838, guid: 06bf9539ad5681943b46c7adfd6c27c2, type: 3}
+  ShieldActionSkin:
+    Down: {fileID: 4231340098957254220, guid: 7df89669fc86d4541bae8543ff986349, type: 3}
+    Left: {fileID: -6417595921456571593, guid: 7df89669fc86d4541bae8543ff986349, type: 3}
+    Up: {fileID: 4807651268718308106, guid: 7df89669fc86d4541bae8543ff986349, type: 3}
+    Right: {fileID: 2632276121321243838, guid: 06bf9539ad5681943b46c7adfd6c27c2, type: 3}
 --- !u!61 &1911137373
 BoxCollider2D:
   m_ObjectHideFlags: 0
