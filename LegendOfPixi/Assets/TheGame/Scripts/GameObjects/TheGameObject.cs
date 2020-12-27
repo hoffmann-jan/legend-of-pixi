@@ -6,6 +6,11 @@ public class TheGameObject : MonoBehaviour
     /// Size of a pixel in unit units.
     /// </summary>
     private const float PixelFraction = 1.0f / 16.0f;
+    
+    /// <summary>
+    /// Objects animator component.
+    /// </summary>
+    protected Animator _anim;
 
     /// <summary>
     /// <see cref="BoxCollider2D"/> pointer for collision detection.
@@ -15,10 +20,6 @@ public class TheGameObject : MonoBehaviour
     /// Temporary memory for <see cref="IsColliding"/>.
     /// </summary>
     protected Collider2D[] _colliders;
-    /// <summary>
-    /// Objects animator component.
-    /// </summary>
-    protected Animator _anim;
 
     private ContactFilter2D _obstacleFilter2d;
 

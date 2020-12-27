@@ -1,25 +1,37 @@
 fileFormatVersion: 2
-guid: 8fdf0e6adf34145e2b92403f85b581bb
+guid: bcf365ead10f5824b85b2f97b368fadb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8033092973025764044
-    second: Items_0
+      213: 4296193443984631328
+    second: Bush_0
   - first:
-      213: 160392798892558373
-    second: Items_0
+      213: -2770932246066905560
+    second: Bush_1
   - first:
-      213: 4337684191699249041
-    second: Items_1
+      213: -8304077115233230222
+    second: Bush_2
   - first:
-      213: -488721925442295091
-    second: Items_2
+      213: -8663683955189347131
+    second: Bush_3
   - first:
-      213: 2614719038445677065
-    second: Items_1
+      213: 8806556967682631439
+    second: Bush_4
   - first:
-      213: -1369248715783372719
-    second: Items_2
+      213: 5976034999206492506
+    second: Bush_0
+  - first:
+      213: -8975693448744442091
+    second: Bush_1
+  - first:
+      213: 7335312483044168631
+    second: Bush_2
+  - first:
+      213: -2343008713132318435
+    second: Bush_3
+  - first:
+      213: 1265841692805378637
+    second: Bush_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Items_0
+      name: Bush_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 528858a9664d93200800000000000000
-      internalID: 160392798892558373
+      spriteID: a59310d5b242fe250800000000000000
+      internalID: 5976034999206492506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_1
+      name: Bush_1
       rect:
         serializedVersion: 2
         x: 16
@@ -164,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90a6102bc19594420800000000000000
-      internalID: 2614719038445677065
+      spriteID: 51769c61d5eef6380800000000000000
+      internalID: -8975693448744442091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_2
+      name: Bush_2
       rect:
         serializedVersion: 2
         x: 32
@@ -185,8 +197,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 150829e2c837ffce0800000000000000
-      internalID: -1369248715783372719
+      spriteID: 7b31654d6d34cc560800000000000000
+      internalID: 7335312483044168631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bush_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d116a1c3df5fb7fd0800000000000000
+      internalID: -2343008713132318435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bush_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d423b89105c219110800000000000000
+      internalID: 1265841692805378637
       vertices: []
       indices: 
       edges: []

@@ -16,13 +16,16 @@ public class Sword : MonoBehaviour
     /// The animator have to save his look direction an parameter "lookAt".
     /// </summary>
     public Animator CharacterAnimator;
-    
+
+    public CollisionDetector CollisionDetector;
+
     /// <summary>
     /// Unity Message.
     /// </summary>
     protected void Awake()
     {
         SetVisible(false);
+        CollisionDetector.WhenCollisionDetected = OnCollisionDetected;
     }
 
     public void OnEnable()
@@ -33,6 +36,17 @@ public class Sword : MonoBehaviour
     public void OnDisable()
     {
         AnimationEventDelegate.WhenTimelineEventReached -= OnTimelineEvent;
+    }
+
+    private void OnCollisionDetected(Collider2D collider)
+    {
+        Debug.Log("Sword has hit" + collider);
+
+        Bush bush = collider.GetComponent<Bush>();
+        if (bush != null)
+        {
+            bush.OnHitBySword();
+        }
     }
 
     /// <summary>
