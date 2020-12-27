@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class TheGameObject : MonoBehaviour
 {
@@ -46,6 +47,12 @@ public class TheGameObject : MonoBehaviour
         return Mathf.Ceil(value / PixelFraction) * PixelFraction;
     }
 
+
+    /// <summary>
+    /// Count of detected collision in last check.
+    /// </summary>
+    protected int _foundCollisions;
+
     /// <summary>
     /// Checks, if this objects <see cref="BoxCollider2D"/> has a collision
     /// with other <see cref="Collider2D"/>'s.
@@ -53,7 +60,8 @@ public class TheGameObject : MonoBehaviour
     /// <returns>True, if colliding; else false.</returns>
     protected bool IsColliding()
     {
-        return _boxCollider.OverlapCollider(_obstacleFilter2d, _colliders) > 0;
+        _foundCollisions = _boxCollider.OverlapCollider(_obstacleFilter2d, _colliders);
+        return _foundCollisions > 0;
     }
 
     private void LateUpdate()
@@ -85,8 +93,116 @@ public class TheGameObject : MonoBehaviour
         if (IsColliding())
         {
             transform.position = oldPosition;
+
+            for (int i = 0; i < _foundCollisions; i++)
+            {
+                var touchableBlocker = _colliders[i].GetComponent<TouchableBlocker>();
+                if (touchableBlocker != null)
+                {
+                    touchableBlocker.OnTouch();
+                }
+            }
         }
 
         change = Vector3.zero;
     }
+
+    /// <summary>
+    /// Calculates the center of tile in which
+    /// the game object is.
+    /// Can be used to snap a object to the grid.
+    /// </summary>
+    /// <returns>Center of tile.</returns>
+    public Vector3 GetFullTilePosition()
+    {
+        var pos = transform.position;
+        pos.x = Mathf.FloorToInt(pos.x);
+        pos.y = Mathf.CeilToInt(pos.y);
+
+        pos.x += 0.5f;
+        pos.y -= 0.5f;
+
+        return pos;
+    }
+
+    /// <summary>
+    /// Pushes the game object to the deltaX/deltaY
+    /// far away tile. 
+    /// </summary>
+    /// <param name="deltaX">Tile count, to push for horizontal.</param>
+    /// <param name="deltaY">Tile count, to push for vertical.</param>
+    public void PushByTiles(float deltaX, float deltaY)
+    {
+        var tilePosition = GetFullTilePosition();
+
+        tilePosition.x += deltaX;
+        tilePosition.y += deltaY;
+
+        var oldPosition = GetFullTilePosition();
+        transform.position = tilePosition;
+
+        if (IsColliding())
+        {
+            transform.position = oldPosition;
+        }
+        else
+        {
+            StartCoroutine(AnimateMoveTowards(oldPosition, tilePosition));
+        }
+    }
+
+    /// <summary>
+    /// Pushes the hero away from the given object.
+    /// </summary>
+    /// <param name="deflector"></param>
+    public void PushAwayFrom(MonoBehaviour deflector)
+    {
+        var diff = transform.position - deflector.transform.position;
+        PushByTiles(diff.x, diff.y);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="from"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    private IEnumerator AnimateMoveTowards(Vector3 from, Vector3 target)
+    {
+        float duration = 0.1f;
+
+        for (float t = 0f; t < 1f; t += Time.deltaTime/duration)
+        {
+            transform.position = Vector3.Lerp(from, target, t);
+            yield return new WaitForEndOfFrame();
+        }
+
+    }
+
+    /// <summary>
+    /// Let figure blink.
+    /// </summary>
+    /// <param name="times">How often.</param>
+    public void Flicker(int times)
+    {
+        StartCoroutine(AnimateFlicker(times));
+    }
+
+    /// <summary>
+    /// Animates flicker.
+    /// </summary>
+    /// <param name="times">Repetitions.</param>
+    /// <returns><see cref="IEnumerator"/></returns>
+    private IEnumerator AnimateFlicker(int times)
+    {
+        var renderer = GetComponent<SpriteRenderer>();
+        for (int i = 0; i < times; i++)
+        {
+            renderer.color = Color.red;
+            yield return new WaitForSeconds(0.05f);
+            renderer.color = Color.white;
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
 }

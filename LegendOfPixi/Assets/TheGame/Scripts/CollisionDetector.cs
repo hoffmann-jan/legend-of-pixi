@@ -16,7 +16,9 @@ public class CollisionDetector : MonoBehaviour
     /// Temporary memory for <see cref="IsColliding"/>.
     /// </summary>
     protected Collider2D[] _colliders;
-
+    /// <summary>
+    /// Count of detected collision in last check.
+    /// </summary>
     protected int _foundCollisions;
 
     private ContactFilter2D _obstacleFilter2d;
