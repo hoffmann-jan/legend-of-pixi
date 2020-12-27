@@ -40,8 +40,6 @@ public class Sword : MonoBehaviour
 
     private void OnCollisionDetected(Collider2D collider)
     {
-        Debug.Log("Sword has hit" + collider);
-
         Bush bush = collider.GetComponent<Bush>();
         if (bush != null)
         {
