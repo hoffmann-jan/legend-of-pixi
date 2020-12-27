@@ -8,9 +8,12 @@ public class StatusBarRenderer : MonoBehaviour
 
     public Image weaponA_renderer;
 
+    public Image weaponB_renderer;
+
     private void Update()
     {
         gemLabel.text = SaveGameDataSingleton.instance.inventory.gems.ToString("D3");
         weaponA_renderer.gameObject.SetActive(SaveGameDataSingleton.instance.inventory.shield);
+        weaponB_renderer.gameObject.SetActive(SaveGameDataSingleton.instance.inventory.sword);
     }
 }

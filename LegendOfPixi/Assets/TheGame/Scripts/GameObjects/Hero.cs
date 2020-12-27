@@ -55,6 +55,11 @@ public class Hero : TheGameObject
     /// </summary>
     public void PerformAction()
     {
+        if (!SaveGameDataSingleton.instance.inventory.sword)
+        {
+            return;
+        }
+
         _anim.enabled = false;
         var renderer = GetComponent<SpriteRenderer>();
 
