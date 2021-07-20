@@ -47,6 +47,15 @@ TextureImporter:
   - first:
       213: 4360131077223874234
     second: Hero_7
+  - first:
+      213: -5267333125020314774
+    second: Hero_7
+  - first:
+      213: -3687602496079464652
+    second: Hero_8
+  - first:
+      213: -2142791582941521445
+    second: Hero_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -317,8 +326,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abef1102d1c428c30800000000000000
-      internalID: 4360131077223874234
+      spriteID: a6314892e6ca6e6b0800000000000000
+      internalID: -5267333125020314774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437f65c411103dcc0800000000000000
+      internalID: -3687602496079464652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd9d21788664342e0800000000000000
+      internalID: -2142791582941521445
       vertices: []
       indices: 
       edges: []

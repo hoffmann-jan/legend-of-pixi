@@ -48,6 +48,11 @@ public class Hero : TheGameObject
         {
             _anim.runtimeAnimatorController = BasicSkin;
         }
+
+        if (SaveGameDataSingleton.instance.health.Current == 0)
+        {
+            _anim.SetTrigger("hero-die");
+        }
     }
 
     /// <summary>
