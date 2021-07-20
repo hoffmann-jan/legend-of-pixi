@@ -17,7 +17,7 @@ public class DialogInputController : MonoBehaviour
     {
         if (_dialogsRenderer.gameOverDialog.activeInHierarchy)
         {
-            if(Input.GetKeyUp(KeyCode.Space))
+            if(Input.GetKeyUp(KeyCode.Return))
             {
                 SaveGameDataSingleton.instance = new SaveGameDataSingleton();
                 Time.timeScale = 1f;
