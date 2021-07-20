@@ -45,6 +45,11 @@ public class Sword : MonoBehaviour
         {
             bush.OnHitBySword();
         }
+
+        if (collider.GetComponent<Enemy>() is Enemy enemy)
+        {
+            enemy.OnHitBySword();
+        }
     }
 
     /// <summary>
