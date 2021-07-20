@@ -16,15 +16,24 @@ public class Danger : TouchableBlocker
     public override void OnTouch()
     {
         base.OnTouch();
+        bool shieldProtection = SaveGameDataSingleton.instance.inventory.shield;
 
         if ((Time.time - lastHit) > 1f)
         {
-            SaveGameDataSingleton.instance.health.Change(-1);
+            int flickerTimes = 5;
+            if (shieldProtection)
+            {
+                flickerTimes = 1;
+            }
+            else
+            {
+                SaveGameDataSingleton.instance.health.Change(-1);
+            }
             lastHit = Time.time;
 
             var hero = FindObjectOfType<Hero>();
             hero.PushAwayFrom(this, TopLeftAnchor);
-            hero.Flicker(5);
+            hero.Flicker(flickerTimes);
         }
 
     }
