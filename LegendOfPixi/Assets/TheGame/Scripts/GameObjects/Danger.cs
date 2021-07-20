@@ -7,6 +7,11 @@ public class Danger : TouchableBlocker
     /// </summary>
     private float lastHit = 0f;
 
+    /// <summary>
+    /// If true objects anchor is top-left, otherwise objects anchor is in the middle. 
+    /// </summary>
+    public bool TopLeftAnchor = false;
+
     public override void OnTouch()
     {
         base.OnTouch();
@@ -17,7 +22,7 @@ public class Danger : TouchableBlocker
             lastHit = Time.time;
 
             var hero = FindObjectOfType<Hero>();
-            hero.PushAwayFrom(this);
+            hero.PushAwayFrom(this, TopLeftAnchor);
             hero.Flicker(5);
         }
 

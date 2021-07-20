@@ -155,9 +155,18 @@ public class TheGameObject : MonoBehaviour
     /// Pushes the hero away from the given object.
     /// </summary>
     /// <param name="deflector"></param>
-    public void PushAwayFrom(MonoBehaviour deflector)
+    public void PushAwayFrom(MonoBehaviour deflector, bool topLeftAnchor)
     {
-        var diff = transform.position - deflector.transform.position;
+        Vector3 diff;
+        if (topLeftAnchor)
+        {
+            diff = transform.position - (deflector.transform.position + new Vector3(0.5f, -0.5f, 0f));
+        }
+        else
+        {
+            diff = transform.position - deflector.transform.position;
+        }
+
         PushByTiles(diff.x, diff.y);
     }
 
