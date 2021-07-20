@@ -52,6 +52,9 @@ public class Hero : TheGameObject
         if (SaveGameDataSingleton.instance.health.Current == 0)
         {
             _anim.SetTrigger("hero-die");
+            GetComponent<HeroInputController>().enabled = false;
+
+            Time.timeScale = 0f;
         }
     }
 
