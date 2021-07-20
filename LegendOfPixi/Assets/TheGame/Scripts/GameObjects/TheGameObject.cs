@@ -208,9 +208,9 @@ public class TheGameObject : MonoBehaviour
         for (int i = 0; i < times; i++)
         {
             renderer.color = Color.red;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSecondsRealtime(0.05f);
             renderer.color = Color.white;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSecondsRealtime(0.05f);
         }
     }
 
