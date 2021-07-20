@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SimpleSpriteAnimator : MonoBehaviour
 {
+    public bool Loop = true;
+
     /// <summary>
     /// Frames which are shown.
     /// </summary>
@@ -23,13 +25,18 @@ public class SimpleSpriteAnimator : MonoBehaviour
     {
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
 
-        while (enabled)
+        do
         {
             for (int i = 0; i < Frames.Length; i++)
             {
                 renderer.sprite = Frames[i];
                 yield return new WaitForSeconds(Duration / Frames.Length);
             }
+
+
         }
+        while (enabled && Loop);
+
+        Destroy(gameObject);
     }
 }

@@ -6047,6 +6047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3cfaeebb4b54e6e93b5b9048291ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Loop: 1
   Frames:
   - {fileID: 654500216720553889, guid: 2aa3165278eb04c039349a3b53bd810e, type: 3}
   - {fileID: -4832314029943180415, guid: 2aa3165278eb04c039349a3b53bd810e, type: 3}
@@ -6166,6 +6167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0290e5da6ff5347bbbc06c5b7c3c8d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExplosionPrototype: {fileID: 4805778370349655187, guid: ddeaf555a428943159df71647127a1a7,
+    type: 3}
 --- !u!1 &1481169901
 GameObject:
   m_ObjectHideFlags: 0
