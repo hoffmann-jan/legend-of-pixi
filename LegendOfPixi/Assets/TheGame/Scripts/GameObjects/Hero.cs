@@ -92,4 +92,9 @@ public class Hero : TheGameObject
         _anim.enabled = true;
         AnimationEventDelegate.WhenTimelineEventReached -= ResetSkin;
     }
+
+    public void OnDeathAnimationComplete()
+    {
+        FindObjectOfType<DialogsRenderer>().gameOverDialog.SetActive(true);
+    }
 }
