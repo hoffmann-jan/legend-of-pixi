@@ -3,14 +3,13 @@
 /// <summary>
 /// Healt of the hero.
 /// </summary>
+[System.Serializable]
 public class Health
 {
-    private int _current = 5;
-
     /// <summary>
     /// Actual health value. If it sink to zero then the hero will die.
     /// </summary>
-    public int Current => _current;
+    public int Current = 5;
 
     /// <summary>
     /// Upper limit.
@@ -23,7 +22,7 @@ public class Health
     /// <param name="delta">Diff.</param>
     public void Change(int delta)
     {
-        _current = Mathf.Clamp(Current + delta, 0, Max);
+        Current = Mathf.Clamp(Current + delta, 0, Max);
     }
 
 }

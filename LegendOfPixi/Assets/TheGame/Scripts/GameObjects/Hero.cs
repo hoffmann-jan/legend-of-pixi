@@ -95,6 +95,6 @@ public class Hero : TheGameObject
 
     public void OnDeathAnimationComplete()
     {
-        FindObjectOfType<DialogsRenderer>().gameOverDialog.SetActive(true);
+        FindObjectOfType<DialogsRenderer>().GameOverDialog.SetActive(true);
     }
 }

@@ -5,11 +5,24 @@ using UnityEngine;
 public class DialogsRenderer : MonoBehaviour
 {
 
-    public GameObject gameOverDialog;
+    public GameObject GameOverDialog;
+    public GameObject SavedInformationDialog;
 
     // Start is called before the first frame update
     public void Awake()
     {
-        gameOverDialog.SetActive(false);   
+        GameOverDialog.SetActive(false);   
+    }
+
+    public void ShowSavedInformationPanel()
+    {
+        StartCoroutine(ShowSavedInformationAndHide());
+    }
+
+    private IEnumerator ShowSavedInformationAndHide()
+    {
+        SavedInformationDialog.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        SavedInformationDialog.SetActive(false);
     }
 }

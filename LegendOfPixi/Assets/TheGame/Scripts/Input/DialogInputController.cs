@@ -15,7 +15,7 @@ public class DialogInputController : MonoBehaviour
 
     protected void Update()
     {
-        if (_dialogsRenderer.gameOverDialog.activeInHierarchy)
+        if (_dialogsRenderer.GameOverDialog.activeInHierarchy)
         {
             if(Input.GetKeyUp(KeyCode.Return))
             {

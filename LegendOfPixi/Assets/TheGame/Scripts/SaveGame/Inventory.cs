@@ -1,6 +1,7 @@
 ﻿/// <summary>
 /// Storage for collectable saveable items.
 /// </summary>
+[System.Serializable]
 public class Inventory
 {
     /// <summary>
