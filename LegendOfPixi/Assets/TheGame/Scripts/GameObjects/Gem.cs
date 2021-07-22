@@ -3,11 +3,13 @@
 /// </summary>
 public class Gem : Collectible
 {
+    public bool RecordDestroy = false;
+
     public override void OnCollect()
     {
         base.OnCollect();
 
         SaveGameDataSingleton.instance.inventory.gems++;
-        Destroy(gameObject);
+        SaveGameDataSingleton.instance.RecordDestroy(gameObject, RecordDestroy);
     }
 }

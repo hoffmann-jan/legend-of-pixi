@@ -11,6 +11,6 @@ public class Enemy : MonoBehaviour
         GameObject explosion = Instantiate(ExplosionPrototype, transform.parent);
         explosion.transform.position = transform.position;
 
-        Destroy(gameObject);
+        SaveGameDataSingleton.instance.RecordDestroy(gameObject, true);
     }
 }

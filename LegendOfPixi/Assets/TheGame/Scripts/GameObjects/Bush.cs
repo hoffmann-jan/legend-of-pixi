@@ -15,6 +15,11 @@ public class Bush : MonoBehaviour
 
     private bool _isAnimationPlaying = false;
 
+    public void Start()
+    {
+        SaveGameDataSingleton.instance.RecoverDestroy(gameObject);
+    }
+
     public void OnHitBySword()
     {
         if (!_isAnimationPlaying)
@@ -45,7 +50,7 @@ public class Bush : MonoBehaviour
             yield return new WaitForSeconds(Duration / DestructionFrames.Length);
         }
 
-        Destroy(gameObject);
+        SaveGameDataSingleton.instance.RecordDestroy(gameObject, true);
     }
 
 }

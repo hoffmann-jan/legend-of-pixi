@@ -4,6 +4,6 @@
     {
         base.OnCollect();
         SaveGameDataSingleton.instance.health.Change(+1);
-        Destroy(gameObject);
+        SaveGameDataSingleton.instance.RecordDestroy(gameObject, true);
     }
 }
